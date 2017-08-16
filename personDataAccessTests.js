@@ -5,9 +5,12 @@ describe("Testing function the save personal details.", function () {
 
     it('Add a new person to the database', function (done) {
         var personDataAccess = new PersonDataAccess();
-        var person = { };
+        var person = { Name: 'Tony', LastName: 'Bennett' };
         personDataAccess.Add(person);
-        assert(false, "To be implemented");
+        
+        assert(false, 'call to save data failed');
+        done();
     });
+    
     
 });
