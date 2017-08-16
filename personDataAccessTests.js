@@ -1,5 +1,6 @@
 var assert = require('assert'); 
 var PersonDataAccess = require('./personDataAccess');
+var Database = require('./Database.js');  // this will be faked, need a reference to it
 var sinon = require('sinon');
 require('mocha-sinon');
 
