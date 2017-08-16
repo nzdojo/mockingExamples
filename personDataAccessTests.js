@@ -13,7 +13,7 @@ describe("Testing function the save personal details.", function () {
         var spyCallback = sandbox.spy();
         var personDataAccess = new PersonDataAccess(database);
         var person = { Name: 'Tony', LastName: 'Bennett' };
-        personDataAccess.Add(person);
+        personDataAccess.Add(person, spyCallback);
         
         assert(stubWritePerson.calledWith(person.Name, person.LastName), 'Write Person not called correctly');
         assert(spyCallback.calledOnce, 'The database needs to have called the callback once');

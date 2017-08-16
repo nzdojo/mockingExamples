@@ -3,7 +3,8 @@
 function Database() {
 }
 
-Database.prototype.WritePerson = function(name, lastname, callback) {
+Database.prototype.WritePerson = function(name, lastname) {
+   
 };
 
 module.exports = Database;
