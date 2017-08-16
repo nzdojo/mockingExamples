@@ -22,5 +22,20 @@ describe("Testing function the save personal details.", function () {
         done();
     });
     
+    it('Add a new person to the database - using mocking', function (done) {
+
+        var database = new Database();
+        var personDataAccess = new PersonDataAccess(database);
+        var person = { Name: 'Tony', LastName: 'Bennett' };
+        var mockDatabase = sinon.mock(database);        
+        mockDatabase.expects('WritePerson').withArgs(person.Name, person.LastName).once();
+        
+        personDataAccess.Add(person, function() {});
+        
+        mockDatabase.verify();
+       
+        //sandbox.restore();
+        done();
+    });
     
 });
