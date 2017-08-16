@@ -1,5 +1,7 @@
 var assert = require('assert'); 
 var PersonDataAccess = require('./personDataAccess');
+var sinon = require('sinon');
+require('mocha-sinon');
 
 describe("Testing function the save personal details.", function () {
 
