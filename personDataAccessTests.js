@@ -2,7 +2,6 @@ var assert = require('assert');
 var PersonDataAccess = require('./personDataAccess');
 var Database = require('./database.js');  // this will be faked, need a reference to it
 var sinon = require('sinon');
-require('mocha-sinon');
 
 describe("Testing function the save personal details.", function () {
 
