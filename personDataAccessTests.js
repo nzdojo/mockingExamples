@@ -10,13 +10,14 @@ describe("Testing function the save personal details.", function () {
         var sandbox = sinon.sandbox.create();
         var database = new Database();
         var stubWritePerson = sandbox.stub(database, 'WritePerson');
-
+        var spyCallback = sandbox.spy();
         var personDataAccess = new PersonDataAccess(database);
         var person = { Name: 'Tony', LastName: 'Bennett' };
         personDataAccess.Add(person);
         
         assert(stubWritePerson.calledWith(person.Name, person.LastName), 'Write Person not called correctly');
-        
+        assert(spyCallback.calledOnce, 'The database needs to have called the callback once');
+       
         sandbox.restore();
         done();
     });
