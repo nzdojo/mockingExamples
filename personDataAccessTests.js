@@ -34,7 +34,6 @@ describe("Testing function the save personal details.", function () {
         
         mockDatabase.verify();
        
-        //sandbox.restore();
         done();
     });
     
